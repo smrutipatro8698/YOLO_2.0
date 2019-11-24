@@ -1,6 +1,6 @@
 #!/bin/bash
 
-NUM_CLASSES=$1
+NUM_CLASSES=1
 
 echo "
 [net]
