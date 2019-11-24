@@ -141,11 +141,16 @@ class YOLOLayer(nn.Module):
         ByteTensor = torch.cuda.ByteTensor if x.is_cuda else torch.ByteTensor
 
         self.img_dim = img_dim
+        print(x.size())
         num_samples = x.size(0)
         grid_size = x.size(2)
+        print(num_samples)
+        print(self.num_anchors)
+        print(self.num_classes)
+        print(grid_size)
 
         prediction = (
-            x.view(num_samples, self.num_anchors, self.num_classes + 5, grid_size, grid_size)
+            x.view(num_samples, self.num_anchors, 5, grid_size, grid_size)
             .permute(0, 1, 3, 4, 2)
             .contiguous()
         )

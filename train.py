@@ -58,12 +58,12 @@ if __name__ == "__main__":
     model.apply(weights_init_normal)
     print("Model initialised")
 
-    # If specified we start from checkpoint
-    if opt.pretrained_weights:
-        if opt.pretrained_weights.endswith(".pth"):
-            model.load_state_dict(torch.load(opt.pretrained_weights))
-        else:
-            model.load_darknet_weights(opt.pretrained_weights)
+    # # If specified we start from checkpoint
+    # if opt.pretrained_weights:
+    #     if opt.pretrained_weights.endswith(".pth"):
+    #         model.load_state_dict(torch.load(opt.pretrained_weights))
+    #     else:
+    #         model.load_darknet_weights(opt.pretrained_weights)
 
     print("Weights loaded")
 
